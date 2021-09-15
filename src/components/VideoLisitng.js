@@ -1,13 +1,17 @@
 import React from "react";
 import { data } from "../data";
-
-console.log(data);
+import { useNav } from "../nav-context";
 
 export function VideoListing() {
+  const { menu } = useNav();
+
   return (
     <div>
       <div className="videoListing-page">
-        <div className="video-listing-side-nav">
+        <div
+          className="video-listing-side-nav"
+          style={{ display: menu ? "flex" : "none" }}
+        >
           <div>Home</div>
           <div>Explore</div>
           <div>Subscriptions</div>
