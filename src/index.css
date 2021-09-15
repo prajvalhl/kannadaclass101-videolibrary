@@ -17,7 +17,6 @@ body {
   display: flex;
   flex-direction: column;
   margin-left: 1rem;
-  background-color: yellow;
 }
 
 .video-listing-side-nav div {
@@ -29,7 +28,9 @@ body {
 .video-listing {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .video-card {
@@ -38,7 +39,25 @@ body {
 }
 
 @media (max-width: 900px) {
+  .video-card {
+    margin: 0;
+  }
+
   .video-listing-side-nav {
     display: none;
+  }
+
+  .video-listing {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1370px) {
+  .video-listing-side-nav div {
+    width: 12rem;
+  }
+
+  .video-listing {
+    width: 100%;
   }
 }

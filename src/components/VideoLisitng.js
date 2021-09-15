@@ -20,38 +20,39 @@ export function VideoListing() {
         </div>
         <div className="video-listing">
           {data.map((video) => (
-            <div class="video-card">
-              <div class="video-card-other-option">
-                <button class="watch-later">
-                  <span class="material-icons"> watch_later </span>
+            <div key={video.id} className="video-card">
+              <div className="video-card-other-option">
+                <button className="watch-later">
+                  <span className="material-icons"> watch_later </span>
                 </button>
-                <button class="add-to-playlist">
-                  <span class="material-icons"> playlist_add </span>
+                <button className="add-to-playlist">
+                  <span className="material-icons"> playlist_add </span>
                 </button>
               </div>
               <img
-                class="video-card-thumbnail"
-                src="https://via.placeholder.com/1280x720"
+                className="video-card-thumbnail"
+                src={video.videoThumbnail}
                 alt=""
               />
-              <div class="video-card-details">
-                <div class="video-card-channel-image">
+              <div className="video-card-details">
+                <div className="video-card-channel-image">
                   <img
-                    src="https://via.placeholder.com/250x250"
+                    src={video.channelThumbnail}
                     alt="avatar"
-                    class="custom-avatar-small"
+                    className="custom-avatar-small"
                   />
                 </div>
-                <div class="video-card-details-text">
-                  <p class="vcd-p vcd-title">
-                    The Animals of Chernobyl | The New York Times
+                <div className="video-card-details-text">
+                  <p className="vcd-p vcd-title">{video.videoName}</p>
+                  <p className="vcd-p vcd-channel-name">{video.channelName}</p>
+                  <p className="vcd-p vcd-view-details">
+                    {video.views}
+                    {video.viewsValue} views | {video.year} years ago
                   </p>
-                  <p class="vcd-p vcd-channel-name">The New York Times</p>
-                  <p class="vcd-p vcd-view-details">10M views | 7 years ago</p>
                 </div>
-                <div class="video-card-more-option">
-                  <button class="three-dots">
-                    <span class="material-icons"> more_vert </span>
+                <div className="video-card-more-option">
+                  <button className="three-dots">
+                    <span className="material-icons"> more_vert </span>
                   </button>
                 </div>
               </div>
