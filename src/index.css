@@ -28,10 +28,6 @@ button {
   font-family: "Roboto", sans-serif;
 }
 
-input {
-  accent-color: var(--primary-color);
-}
-
 /* header related */
 .header {
   box-sizing: border-box;
@@ -102,7 +98,12 @@ input {
   background-color: white;
   display: flex;
   flex-direction: column;
-  margin-left: 1rem;
+  box-shadow: 5px 0 5px -2px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 3.7rem;
+  left: 0;
+  z-index: 1;
+  height: 100%;
 }
 
 .video-listing-side-nav div {
@@ -147,9 +148,7 @@ input {
   .video-listing-side-nav {
     display: none;
     margin: 0;
-    position: fixed;
-    left: 0;
-    z-index: 1;
+    top: 4.4rem;
   }
 
   .video-listing {
@@ -158,18 +157,15 @@ input {
 }
 
 /* for old gen 1370px screens */
-@media (max-width: 1370px) {
-  .video-listing-side-nav div {
-    width: 12rem;
-  }
-
+@media (max-width: 1370px) and (min-width: 1030px) {
   .video-listing {
     width: 100%;
+    margin-left: 8rem;
   }
 }
 
 /* for tablets */
-@media (max-width: 1030px) {
+@media (max-width: 1030px) and (min-width: 700px) {
   .video-card-other-option button {
     color: white;
     background-color: rgba(0, 0, 0, 0.8);
@@ -177,5 +173,9 @@ input {
 
   .video-card-more-option .three-dots {
     color: black;
+  }
+
+  .video-listing {
+    margin: 9rem;
   }
 }
