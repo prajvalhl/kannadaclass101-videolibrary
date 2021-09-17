@@ -12,7 +12,7 @@ function NavReducer(state, action) {
 }
 
 export function NavProvider({ children }) {
-  const [{ menu }, dispatch] = useReducer(NavReducer, { menu: false });
+  const [{ menu }, dispatch] = useReducer(NavReducer, { menu: true });
   return <Nav.Provider value={{ menu, dispatch }}>{children}</Nav.Provider>;
 }
 
