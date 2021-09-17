@@ -41,7 +41,7 @@ button {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 100;
 }
 
 .brand-title {
@@ -96,33 +96,38 @@ button {
 /* side navbar */
 .video-listing-side-nav {
   background-color: white;
+  flex: 0.2;
   display: flex;
   flex-direction: column;
-  box-shadow: 5px 0 5px -2px rgba(0, 0, 0, 0.4);
-  position: fixed;
-  top: 3.7rem;
-  left: 0;
-  z-index: 1;
   height: 100%;
+  border-right: 1px solid var(--border-color);
 }
 
 .video-listing-side-nav div {
-  padding: 1rem 0 1rem 1rem;
-  width: 15rem;
+  padding: 1rem 0 1rem 2rem;
 }
 
 .video-listing-side-nav div:hover {
   background-color: var(--border-color);
+  font-weight: bold;
   cursor: pointer;
+  color: var(--primary-color);
+}
+
+.side-nav-display-true {
+  display: flex;
+}
+
+.side-nav-display-false {
+  display: none;
 }
 
 /* videos */
 .video-listing {
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  width: 80%;
-  margin: 0 auto;
 }
 
 .video-card {
@@ -147,35 +152,25 @@ button {
 
   .video-listing-side-nav {
     display: none;
-    margin: 0;
+    position: fixed;
     top: 4.4rem;
+    left: 0;
+    z-index: 1;
+  }
+
+  .video-listing-side-nav div {
+    padding: 1rem 3rem 1rem 1rem;
   }
 
   .video-listing {
     width: 100%;
   }
-}
 
-/* for old gen 1370px screens */
-@media (max-width: 1370px) and (min-width: 1030px) {
-  .video-listing {
-    width: 100%;
-    margin-left: 8rem;
-  }
-}
-
-/* for tablets */
-@media (max-width: 1030px) and (min-width: 700px) {
-  .video-card-other-option button {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.8);
+  .side-nav-display-true {
+    display: none;
   }
 
-  .video-card-more-option .three-dots {
-    color: black;
-  }
-
-  .video-listing {
-    margin: 9rem;
+  .side-nav-display-false {
+    display: flex;
   }
 }

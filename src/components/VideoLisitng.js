@@ -9,8 +9,9 @@ export function VideoListing() {
     <div>
       <div className="videoListing-page">
         <div
-          className="video-listing-side-nav"
-          style={{ display: menu ? "flex" : "none" }}
+          className={`video-listing-side-nav ${
+            menu ? "side-nav-display-true" : "side-nav-display-false"
+          }`}
         >
           <div>Home</div>
           <div>Explore</div>
