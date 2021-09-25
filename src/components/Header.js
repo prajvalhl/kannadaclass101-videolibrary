@@ -2,6 +2,7 @@ import React from "react";
 // import { useCart } from "../cart-context";
 import { useNav } from "../nav-context";
 import { data } from "../data";
+import { Link } from "react-router-dom";
 
 export function Header() {
   //   const { state } = useCart();
@@ -9,22 +10,23 @@ export function Header() {
 
   return (
     <div className="header">
-      <div
-        className="header-left-side"
-        onClick={() => dispatch({ type: "MENU" })}
-      >
-        <button className="btn-show menu">
+      <div className="header-left-side">
+        <button
+          className="btn-show menu"
+          onClick={() => dispatch({ type: "MENU" })}
+        >
           <span className="material-icons"> menu </span>
         </button>
-        <p
-          className="brand-title"
-          onClick={() => {
-            //   setRoute("product");
-            window.scrollTo(0, 0);
-          }}
-          // onClick={() => setRoute("cart")}
-        >
-          KannadaClass101
+        <p>
+          <Link
+            to="/"
+            className="brand-title"
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+          >
+            KannadaClass101
+          </Link>
         </p>
       </div>
       <div className="header-right-side">

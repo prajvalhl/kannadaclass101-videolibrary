@@ -1,6 +1,7 @@
 import React from "react";
 import { data } from "../data";
 import { useNav } from "../nav-context";
+import { Link } from "react-router-dom";
 
 export function VideoListing() {
   const { menu } = useNav();
@@ -34,16 +35,18 @@ export function VideoListing() {
                   <span className="material-icons"> playlist_add </span>
                 </button>
               </div>
-              <img
-                className="video-card-thumbnail"
-                src={video.videoThumbnail}
-                alt=""
-              />
+              <Link to={`/video/${video.id}`}>
+                <img
+                  className="video-card-thumbnail"
+                  src={video.videoThumbnail}
+                  alt="video thumbnail"
+                />
+              </Link>
               <div className="video-card-details">
                 <div className="video-card-channel-image">
                   <img
                     src={video.channelThumbnail}
-                    alt="avatar"
+                    alt="channel thumbnail"
                     className="custom-avatar-small"
                   />
                 </div>
