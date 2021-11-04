@@ -2,6 +2,7 @@ import React from "react";
 import { data } from "../data";
 import { useParams } from "react-router-dom";
 import "../styles/videoStyles.css";
+import { SideNav } from "./SideNav";
 
 export function VideoPage() {
   const { videoId } = useParams();
@@ -9,6 +10,9 @@ export function VideoPage() {
 
   return (
     <div className="video-container">
+      <div className="someref">
+        <SideNav />
+      </div>
       <div className="view-container">
         <img src={video.videoThumbnail} alt="" />
       </div>
