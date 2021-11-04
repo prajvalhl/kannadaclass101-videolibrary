@@ -1,29 +1,13 @@
 import React from "react";
 import { data } from "../data";
-import { useNav } from "../nav-context";
 import { Link } from "react-router-dom";
+import { SideNav } from "./SideNav";
 
 export function VideoListing() {
-  const { menu } = useNav();
-
   return (
     <div>
       <div className="videoListing-page">
-        <div
-          className={`video-listing-side-nav ${
-            menu ? "side-nav-display-true" : "side-nav-display-false"
-          }`}
-        >
-          <div>Home</div>
-          <div>Explore</div>
-          <div>Subscriptions</div>
-          <div>Originals</div>
-          <div>Library</div>
-          <div>History</div>
-          <div>Your videos</div>
-          <div>Watch later</div>
-          <div>Liked videos</div>
-        </div>
+        {<SideNav />}
         <div className="video-listing">
           {data.map((video) => (
             <div key={video.id} className="video-card">
